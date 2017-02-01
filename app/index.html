@@ -1,41 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Test task</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="scripts/app.js"></script>
 </head>
-<body>
-<div class="outer-container">
-    <div class="form-container">
-        <form action="">
-            <select name="select" id="">
-                <option value="val1">Paris</option>
-                <option value="val2">New York</option>
-                <option value="val3" selected>Minsk</option>
-                <option value="val4">London</option>
-            </select>
-            <button name="button">
-                Add
-            </button>
-        </form>
+<body ng-app="testTask">
+
+    <div class="outer-container">
+        <div class="form-container" form-directive></div>
+
+        <div class="weather-container" cities-list></div>
     </div>
-
-    <div class="weather-container">
-        <dl class="weather-list">
-
-                <dt>Minsk</dt>
-                <dd>+10</dd>
-                <dd>
-                    <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="">
-                </dd>
-
-        </dl>
-        <button>
-            X
-        </button>
-    </div>
-</div>
 
 </body>
 </html>
