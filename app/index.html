@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <title>Test task</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test task</title>
+        <link rel="stylesheet" href="styles/app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    </head>
 
-</head>
-<body ng-app="testTask">
+    <body ng-app="testTask">
 
-    <div class="outer-container">
-        <div class="form-container" form-directive></div>
-        <div class="weather-container" cities-list></div>
-    </div>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/services/dataService.js"></script>
-    <script src="scripts/controllers/citiesList.controller.js"></script>
-    <script src="scripts/controllers/citiesSelection.controller.js"></script>
-    <script src="scripts/directives/citiesList.directive.js"></script>
-    <script src="scripts/directives/citiesSelection.directive.js"></script>
+        <div class="outer-container">
+            <div class="weather-container" cities-list></div>
+            <div class="form-container" form-directive></div>
+        </div>
 
-</body>
+        <script src="scripts/skycons.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/httpService.js"></script>
+        <script src="scripts/services/staticDataService.js"></script>
+        <script src="scripts/controllers/citiesList.controller.js"></script>
+        <script src="scripts/controllers/citiesSelection.controller.js"></script>
+        <script src="scripts/directives/citiesList.directive.js"></script>
+        <script src="scripts/directives/citiesSelection.directive.js"></script>
+
+    </body>
 </html>

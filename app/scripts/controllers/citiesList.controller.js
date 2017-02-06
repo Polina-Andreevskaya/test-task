@@ -1,9 +1,11 @@
 angular.module('testTask')
-    .controller('listCtrl', ['$scope', function ($scope) {
-
+    .controller('listCtrl', ['$scope', 'httpService', function ($scope, httpService) {
         $scope.removeCity = function (element) {
-            _.remove($scope.visibleElements, function (el) {
-                return el.id === element.id;
-            });
+            element.visible = false;
         };
+
+        $scope.updateCity = function (element) {
+           httpService.setParams($scope.data.keyDarkSky, element);
+           httpService.getFromList();
+        }
     }]);

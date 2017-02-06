@@ -1,6 +1,11 @@
 <form action="">
     <select name="select" id="select" ng-model="data.model">
-        <option ng-repeat="option in data.options" value="{{option.id}}">{{option.name}}</option>
+        <option value="" disabled selected hidden>
+            --Select city--
+        </option>
+        <option ng-repeat="city in data.cities" ng-hide="city.visible" value="{{city.id}}">
+            {{city.name}}
+        </option>
     </select>
     <button name="button" ng-click="addCity()">
         Add

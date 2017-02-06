@@ -1,0 +1,33 @@
+html, body {
+    text-align: center
+}
+
+dd {
+    margin: 0;
+}
+
+.remove-btn, .update-btn {
+    float: right;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    right: -20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.remove-btn:hover, .update-btn:hover {
+    background-color: lightgray;
+}
+
+.remove-btn:after, .update-btn:after {
+    clear: both;
+}
+
+.city-item {
+    display: inline-block;
+    padding: 20px;
+    border: 2px black solid;
+}

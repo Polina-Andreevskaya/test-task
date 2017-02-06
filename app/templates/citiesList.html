@@ -1,14 +1,21 @@
 <dl class="weather-list">
-    <div class="city-item" ng-repeat="element in visibleElements">
-        <dt>{{element.name}}</dt>
-        <!--<dd>+10</dd>-->
-        <!--<dd>-->
-        <!--<img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="">-->
-        <!--</dd>-->
-        <button ng-click="removeCity(element)">
-            X
+    <div class="city-item" ng-repeat="city in data.cities" ng-show="city.visible">
+        <dt>
+            <h3 class="city-title">
+                {{city.name}}
+            </h3>
+        </dt>
+        <dd>
+            <canvas id="{{'icon' + city.id}}" width="128" height="128"></canvas>
+        </dd>
+        <dd>
+            {{city.temperature}}
+        </dd>
+        <button class="remove-btn" ng-click="removeCity(city)">
+            x
+        </button>
+        <button class="update-btn" ng-click="updateCity(city)">
+            ⟳
         </button>
     </div>
-
-
 </dl>
