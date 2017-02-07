@@ -1,5 +1,5 @@
 <dl class="weather-list">
-    <div class="city-item" ng-repeat="city in data.cities" ng-show="city.visible">
+    <div class="city-item" ng-repeat="city in visibleCities track by city.id">
         <dt>
             <h3 class="city-title">
                 {{city.name}}

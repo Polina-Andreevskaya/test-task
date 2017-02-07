@@ -11,7 +11,8 @@ angular.module('testTask')
                 _key = key;
                 _obj = obj;
             },
-            getFromList: function () {
+            getFromList: function (isUpdate) {
+                var temp = (isUpdate) ? _obj : _.clone(_obj);
                 if (_key && _obj) {
                     var url = 'https://api.darksky.net/forecast/' + _key + '/'
                         + _obj.coords + '?exclude=[minutely,hourly,daily,alerts,flags]';
@@ -25,14 +26,13 @@ angular.module('testTask')
                         }
                     }).then(
                         function successCallback(response) {
-                            _obj.temperature = response.data.currently.temperature;
-                            _obj.visible = true;
-                            skycons.set("icon" + _obj.id, response.data.currently.icon);
+                            temp.temperature = response.data.currently.temperature;
+                            skycons.set("icon" + temp.id, response.data.currently.icon);
                         }, function errorCallback(response) {
                             console.log('Error', response);
                         });
 
-                    return _obj;
+                    return temp;
                 }
             }
         };
