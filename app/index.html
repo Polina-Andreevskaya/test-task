@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Test task</title>
@@ -8,21 +8,18 @@
 
     <body ng-app="testTask">
 
-        <div class="outer-container">
-            <div class="weather-container" cities-list></div>
-            <div class="form-container" form-directive></div>
-        </div>
-
+        <container></container>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
         <script src="scripts/skycons.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/services/httpService.js"></script>
-        <script src="scripts/services/staticDataService.js"></script>
+        <script src="scripts/app.module.js"></script>
+        <script src="scripts/services/http.service.js"></script>
+        <script src="scripts/services/staticData.service.js"></script>
         <script src="scripts/controllers/citiesList.controller.js"></script>
         <script src="scripts/controllers/citiesSelection.controller.js"></script>
+        <script src="scripts/directives/container.directive.js"></script>
         <script src="scripts/directives/citiesList.directive.js"></script>
         <script src="scripts/directives/citiesSelection.directive.js"></script>
 

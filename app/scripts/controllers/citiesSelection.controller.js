@@ -1,5 +1,5 @@
 angular.module('testTask')
-    .controller('selectionCtrl', ['$scope', 'staticDataService', 'httpService', function ($scope, staticDataService, httpService) {
+    .controller('selectionCtrl', function ($scope, staticDataService, httpService) {
         $scope.data = staticDataService.getData();
         $scope.visibleCities = [];
 
@@ -19,4 +19,4 @@ angular.module('testTask')
 
             }
         };
-    }]);
+    });

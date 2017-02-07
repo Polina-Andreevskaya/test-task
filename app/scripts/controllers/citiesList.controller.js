@@ -1,5 +1,5 @@
 angular.module('testTask')
-    .controller('listCtrl', ['$scope', 'httpService', function ($scope, httpService) {
+    .controller('listCtrl', function ($scope, httpService) {
         $scope.removeCity = function (element) {
             _.remove($scope.visibleCities, function (el) {
                 return el.id === element.id;
@@ -8,6 +8,6 @@ angular.module('testTask')
 
         $scope.updateCity = function (element) {
             httpService.setParams($scope.data.keyDarkSky, element);
-            element = httpService.getFromList(true);
+            httpService.getFromList(true);
         }
-    }]);
+    });
