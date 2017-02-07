@@ -34,27 +34,6 @@ angular.module('testTask')
 
                     return _obj;
                 }
-            },
-            // getByAddress: function (key, address) {
-            //     var obj;
-            //     $http({
-            //         method: 'GET',
-            //         url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&keyDarkSky=' + key
-            //     }).then(
-            //         function successCallback(response) {
-            //             console.log(response, 'ololo');
-            //
-            //             return obj = {
-            //                 name: response.data.results[0].formatted_address,
-            //                 coords: response.data.results[0].geometry.location.lat + ',' + response.data.results[0].geometry.location.lng
-            //             };
-            //             console.log(obj);
-            //         }, function errorCallback(response) {
-            //             console.log('Error', response);
-            //         });
-            //
-            //
-            // }
-
+            }
         };
     }]);

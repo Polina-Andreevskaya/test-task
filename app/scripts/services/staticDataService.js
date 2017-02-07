@@ -7,7 +7,6 @@ angular.module('testTask')
                 return {
                     model: '',
                     keyDarkSky: 'cf90e9c76e3824d5e9a3745330bb3481',
-                    keyGoogleAPI: 'AIzaSyBVHzEdXI-BdXkp4VXViYPnxIMWqq4g8YU',
                     cities: [
                         {
                             id: '1',

@@ -14,9 +14,6 @@ angular.module('testTask')
                 httpService.setParams($scope.data.keyDarkSky, $scope.data.cities[id]);
                 $scope.data.cities[id] = httpService.getFromList();
                 $scope.data.model = '';
-
-
-                //console.log(httpService.getByAddress($scope.data.keyGoogleAPI, 'Minsk'));
             }
         };
     }]);
