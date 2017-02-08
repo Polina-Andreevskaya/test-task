@@ -13,7 +13,7 @@ angular.module('testTask')
 
                 $scope.updateCity = function (element) {
                     httpService.getFromList(element);
-                }
+                };
             }
         }
     });

@@ -1,7 +1,6 @@
 angular.module('testTask')
-    .constant('staticData', {
+    .constant('citiesDataService', {
         model: '',
-        keyDarkSky: 'cf90e9c76e3824d5e9a3745330bb3481',
         cities: [
             {
                 id: '1',

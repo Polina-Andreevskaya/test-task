@@ -1,13 +1,13 @@
 angular.module('testTask')
-    .directive('formDirective', function () {
+    .directive('citiesSelection', function () {
         return {
             restrict: 'A',
-            templateUrl: 'templates/availableCitiesList.html',
+            templateUrl: 'templates/citiesSelection.html',
             scope: {
-                data: '=staticData',
                 visibleCities: '='
             },
-            controller: function ($scope, httpService) {
+            controller: function ($scope, httpService, citiesDataService) {
+                $scope.data = citiesDataService;
                 $scope.addCity = function () {
                     if ($scope.data.model !== '') {
                         var id = +$scope.data.model - 1;

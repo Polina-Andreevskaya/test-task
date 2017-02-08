@@ -3,8 +3,7 @@ angular.module('testTask')
         return {
             restrict: 'AE',
             templateUrl: 'templates/weatherContainer.html',
-            controller: function ($scope, staticData) {
-                $scope.data = staticData;
+            controller: function ($scope) {
                 $scope.visibleCities = [];
             }
         }
