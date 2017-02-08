@@ -1,0 +1,17 @@
+<dt>
+    <h3 class="city-title">
+        {{city.name}}
+    </h3>
+</dt>
+<dd>
+    <canvas id="{{'icon' + city.id}}" width="128" height="128"></canvas>
+</dd>
+<dd>
+    {{city.temperature}}
+</dd>
+<button class="remove-btn" ng-click="removeCity(city)">
+    x
+</button>
+<button class="update-btn" ng-click="updateCity(city)">
+    ⟳
+</button>

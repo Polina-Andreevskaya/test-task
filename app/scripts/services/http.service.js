@@ -1,39 +1,30 @@
 angular.module('testTask')
-    .factory('httpService', ['$http', function ($http) {
-        var skycons = new Skycons({"color": "black"}),
-            _key,
-            _obj;
+    .factory('httpService', function ($http, httpData) {
 
-        skycons.play();
+        var skycons = new Skycons({"color": "black"}),
+            data = httpData;
 
         return {
-            setParams: function (key, obj) {
-                _key = key;
-                _obj = obj;
-            },
-            getFromList: function (isUpdate) {
-                var temp = (isUpdate) ? _obj : _.clone(_obj);
-                if (_key && _obj) {
-                    var url = 'https://api.darksky.net/forecast/' + _key + '/'
-                        + _obj.coords + '?exclude=[minutely,hourly,daily,alerts,flags]';
-
+            getFromList: function (obj) {
+                if (obj) {
                     $http({
                         method: 'JSONP',
-                        url: url,
+                        url: data.getUrl(obj.coords),
                         params: {
                             units: 'si',
                             callback: 'JSON_CALLBACK'
                         }
                     }).then(
-                        function successCallback(response) {
-                            temp.temperature = response.data.currently.temperature;
-                            skycons.set("icon" + temp.id, response.data.currently.icon);
-                        }, function errorCallback(response) {
+                        function (response) {
+                            obj.temperature = response.data.currently.temperature;
+                            skycons.set("icon" + obj.id, response.data.currently.icon);
+                            skycons.play();
+                        }, function (response) {
                             console.log('Error', response);
                         });
 
-                    return temp;
+                    return obj;
                 }
             }
         };
-    }]);
+    });

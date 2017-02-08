@@ -1,6 +1,6 @@
 angular.module('testTask')
-    .controller('selectionCtrl', function ($scope, staticDataService, httpService) {
-        $scope.data = staticDataService.getData();
+    .controller('selectionCtrl', function ($scope, staticData, httpService) {
+        $scope.data = staticData;
         $scope.visibleCities = [];
 
         $scope.addCity = function () {
