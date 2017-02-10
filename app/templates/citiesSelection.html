@@ -3,7 +3,7 @@
         <option value="" disabled selected hidden>
             --Select city--
         </option>
-        <option ng-repeat="city in data.cities track by city.id"
+        <option ng-repeat="city in data.cities track by $index"
             value="{{city.id}}">
             {{city.name}}
         </option>
