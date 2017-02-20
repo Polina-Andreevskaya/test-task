@@ -1,7 +1,7 @@
 angular.module('testTask')
     .directive('cityItem', function () {
         return {
-            restrict: 'AE',
+            restrict: 'A',
             templateUrl: 'templates/visibleCityItem.html',
             scope: true,
             controller: function ($scope, httpService) {
