@@ -1,4 +1,4 @@
-describe('City item directive', function () {
+describe('Cities list directive', function () {
     var suite;
     beforeEach(module('testTask'));
     beforeEach(module('allTemplates'));
