@@ -4,9 +4,7 @@ describe('City item directive', function () {
     beforeEach(module('allTemplates'));
 
     beforeEach(inject(function ($injector) {
-
         suite = {};
-
         suite.$rootScope = $injector.get('$rootScope');
         suite.$compile = $injector.get('$compile');
         suite.httpService = $injector.get('httpService');
@@ -24,27 +22,22 @@ describe('City item directive', function () {
                 coords: '48.8566,2.3515'
             }
         ];
-        suite.itemElement = suite.$compile('<div city-item></div>')(suite.parentScope);
-        suite.parentScope.$digest();
-        suite.itemScope = suite.itemElement.scope();
+
+        compileDirective();
 
         suite.itemScope.city = suite.itemScope.visibleCities[0];
-
-        spyOn(suite.httpService, 'getFromList').and.callFake(function (obj) {
-            obj.name = 'Test';
-            return obj;
-        });
     }));
 
-    it('should have defined scope', function () {
-        expect(suite.itemScope.removeCity).toBeDefined();
-        expect(suite.itemScope.updateCity).toBeDefined();
-        expect(suite.itemScope.visibleCities).toBeDefined();
-    });
+    function compileDirective() {
+        suite.itemElement = '<div city-item></div>';
+        suite.itemElement = suite.$compile(suite.itemElement)(suite.parentScope);
+        suite.parentScope.$digest();
+        suite.itemScope = suite.itemElement.scope();
+    }
 
     it('should do local changes of visibleCities', function () {
         expect(suite.parentScope.visibleCities).toEqual(suite.itemScope.visibleCities);
-        suite.itemScope.visibleCities = suite.itemScope.visibleCities[0];
+        suite.itemScope.visibleCities = suite.itemScope.city;
         expect(suite.parentScope.visibleCities).not.toEqual(suite.itemScope.visibleCities);
     });
 
@@ -57,13 +50,19 @@ describe('City item directive', function () {
     });
 
     it('should update city from visibleCities', function () {
+        spyOn(suite.httpService, 'getFromList').and.callFake(function (obj) {
+            obj.name = 'Test';
+            return obj;
+        });
         suite.itemScope.updateCity(suite.itemScope.visibleCities[0]);
         expect(suite.itemScope.city.name).toEqual('Test');
         expect(suite.itemScope.visibleCities[0].name).toEqual('Test');
     });
 
     afterEach(function () {
+        suite.itemScope.$destroy();
         suite.$rootScope.$digest();
+        suite.itemElement.remove();
         suite = null;
     });
 
